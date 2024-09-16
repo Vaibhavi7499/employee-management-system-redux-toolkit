@@ -2,31 +2,22 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { deleteEmp, searchByName } from "../../Store/Slice/EmpSlice";
+import { deleteEmp } from "../../Store/Slice/EmpSlice";
 
 const EmployeeTable = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  let empList = useSelector((state) => state.employee);
   let [search, setSearch] = useState("");
+  let empList = useSelector((state) => state.employee).filter((ele) => {
+    return search?.trim() === ""
+      ? ele
+      : ele?.empName?.toLowerCase()?.includes(search.toLowerCase());
+  });
 
   let removeEmp = (id) => {
     dispatch(deleteEmp(id));
     toast.warn("Employee deleted successfully");
   };
-
-  function getInputValue(e) {
-    setSearch(e.target.value);
-    dispatch(searchByName(e.target.value))
-    // if (!search.trim()?.length) {
-    //   return empList;
-    // } else {
-    //   let emp = empList.filter((e) =>
-    //     e?.empName?.toLowerCase()?.includes(search.toLowerCase())
-    //   );
-    //   console.log(emp);
-    // }
-  }
 
   return (
     <div className="mt-3 w-75 m-auto">
@@ -51,18 +42,9 @@ const EmployeeTable = () => {
               type="text"
               placeholder="Search by name"
               value={search}
-              onChange={(e) => getInputValue(e)}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          {/* <div className="col-md-4">
-            <button
-              className="btn btn-success"
-              onClick={() => dispatch(searchByName(search))}
-            >
-              search
-            </button>
-          </div> */}
         </div>
       </div>
       <table className="table mt-4">
@@ -76,7 +58,9 @@ const EmployeeTable = () => {
         </thead>
         <tbody>
           {!empList.length ? (
-            <h3 className="pt-3 text-center">No record to display</h3>
+            <tr className="pt-3 text-center">
+              <td>No record to display</td>
+            </tr>
           ) : (
             empList.map((e) => (
               <tr key={e?.id}>
