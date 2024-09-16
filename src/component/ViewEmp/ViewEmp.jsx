@@ -2,18 +2,18 @@ import React from "react";
 import "./ViewEmp.css";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ViewEmp = () => {
   let viewUser = useSelector((state) => state.employee);
   let params = useParams();
-let navigate = useNavigate();
+  let navigate = useNavigate();
   let filteredObj = viewUser.find((e) => e?.id === params?.id);
 
   return (
     <div class="card col-md-5 mt-3 m-auto">
-        <div>
-        <button className="backbtn" onClick={()=>navigate("/")}>Back to Home</button>
-      <h4 className="text-center mt-3">Employee Details</h4>
+      <div>
+        <h4 className="text-center mt-3">Employee Details</h4>
       </div>
       <hr />
       <div class="card-body m-auto">
@@ -29,6 +29,9 @@ let navigate = useNavigate();
           <h6>Employee Phone No : </h6>
           <p className="name">{filteredObj?.empPhoneNumber}</p>
         </div>
+      </div>
+      <div className="d-flex justify-content-center pb-3">
+        <Link to="/">Back to Home</Link>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteEmp } from "../Store/Slice/EmpSlice";
 import { toast } from "react-toastify";
+import { deleteEmp } from "../../Store/Slice/EmpSlice";
 
 const EmployeeTable = () => {
   let navigate = useNavigate();

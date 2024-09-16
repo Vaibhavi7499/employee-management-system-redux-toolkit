@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addEmp, updateEmp } from "../Store/Slice/EmpSlice";
+import { addEmp, updateEmp } from "../../Store/Slice/EmpSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
