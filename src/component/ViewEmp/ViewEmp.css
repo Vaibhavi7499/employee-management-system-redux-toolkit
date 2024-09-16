@@ -1,0 +1,16 @@
+.name{
+    margin-left: 20px;
+}
+h6{
+    font-size: 16px;
+}
+
+.backbtn{
+    margin-left: 190px;
+    margin-top: 30px;
+    background-color: tomato;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 150px;
+}
