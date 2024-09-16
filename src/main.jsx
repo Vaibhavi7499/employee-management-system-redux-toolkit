@@ -10,13 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { store } from "./Store/Store.js";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  <Provider store={store}>
-    <BrowserRouter>
-      <ToastContainer autoClose={400}/>
-      <App />
-    </BrowserRouter>
-  </Provider>
-
-  // </StrictMode>,
+  <StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ToastContainer autoClose={1500} />
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </StrictMode>
 );
