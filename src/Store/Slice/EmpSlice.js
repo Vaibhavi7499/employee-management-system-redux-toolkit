@@ -29,8 +29,19 @@ const EmpSlice = createSlice({
         }
       });
     },
+
+    searchByName: (state, action) => {
+      // if (!action?.payload?.trim()?.length) {
+      //   return [...state];
+      // } else {
+      let emp = state.filter((e) => {
+        e?.empName?.toLowerCase().includes(action?.payload?.toLowerCase());
+      });
+      console.log(emp);
+    },
   },
+  // },
 });
 
-export const { addEmp, deleteEmp ,updateEmp} = EmpSlice.actions;
+export const { addEmp, deleteEmp, updateEmp, searchByName } = EmpSlice.actions;
 export default EmpSlice.reducer;

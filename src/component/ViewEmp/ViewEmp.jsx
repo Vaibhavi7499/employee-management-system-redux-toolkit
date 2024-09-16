@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const ViewEmp = () => {
   let viewUser = useSelector((state) => state.employee);
   let params = useParams();
-  let navigate = useNavigate();
   let filteredObj = viewUser.find((e) => e?.id === params?.id);
 
   return (

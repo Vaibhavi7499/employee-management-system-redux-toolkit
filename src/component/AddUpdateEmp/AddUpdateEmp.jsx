@@ -34,13 +34,13 @@ const AddUpdateEmp = () => {
       toast.success("Employee updated successfully");
       setTimeout(() => {
         navigate("/");
-      }, 1000);
+      }, 500);
     } else {
       dispatch(addEmp(empObj));
       toast.success("Employee added successfully");
       setTimeout(() => {
         navigate("/");
-      }, 1000);
+      }, 500);
     }
   }
 
