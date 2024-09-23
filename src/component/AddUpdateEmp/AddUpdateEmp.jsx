@@ -70,7 +70,7 @@ const AddUpdateEmp = () => {
             {...register("empName", {
               required: {
                 value: true,
-                message: "Employee name is required",
+                message: `${t("NameRequired")}`,
               },
             })}
           />
@@ -91,12 +91,12 @@ const AddUpdateEmp = () => {
             {...register("empEmail", {
               required: {
                 value: true,
-                message: "Employee email is required",
+                message: `${t("EmailRequired")}`,
               },
 
               pattern: {
                 value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                message: "Invalid email",
+                message: `${t("InvalidEmail")}`,
               },
             })}
           />
@@ -116,7 +116,7 @@ const AddUpdateEmp = () => {
             {...register("empPhoneNumber", {
               required: {
                 value: true,
-                message: "Employee phone number is required",
+                message: `${t("EmpPhone")}`,
               },
             })}
           />
