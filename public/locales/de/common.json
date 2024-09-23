@@ -1,0 +1,28 @@
+{
+    "ProjectHeading" : "Mitarbeitermanagementsystem",
+    "Home" : "Heim",
+    "Add User" : "Benutzer hinzufügen",
+    "Name" : "Name",
+    "Email" : "E-Mail",
+    "Phone Number" : "Telefonnummer",
+    "Action" : "Aktion",
+    "Add Employee" : "Mitarbeiter hinzufügen",
+    "Update Employee" : "Mitarbeiter aktualisieren",
+    "Employee Name" : "Name des Mitarbeiters",
+    "Employee Email" : "Mitarbeiter-E-Mail",
+    "Employee Phone Number" : "Telefonnummer des Mitarbeiters",
+    "View" : "Sicht",
+    "Update" : "Aktualisieren",
+    "Delete" : "Löschen",
+    "No record to display" : "Kein Datensatz zum Anzeigen vorhanden",
+    "search by name" : "Nach Namen suchen",
+    "Employee Details" : "Mitarbeiterdetails",
+    "Back to Home" : "Zurück nach Hause",
+    "select language" : "Sprache auswählen",
+    
+        "Add message" : "Mitarbeiter erfolgreich hinzugefügt",
+        "Update message" : "Mitarbeiter erfolgreich aktualisiert",
+        "Delete message" : "Mitarbeiter erfolgreich gelöscht"
+   
+
+}

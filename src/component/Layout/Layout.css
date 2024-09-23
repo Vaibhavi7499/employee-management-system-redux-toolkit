@@ -7,3 +7,19 @@ ul li a{
   border-bottom: 1px solid green !important;
   padding-bottom: 2px !important;
 }
+
+.main-lang{
+  display: flex;
+  justify-content: space-between;
+}
+.right-nav{
+  margin-right: 100px;
+  margin-top: 10px;
+}
+
+.right-nav ul {
+  cursor: pointer;
+}
+.right-nav ul li {
+  list-style-type:none;
+}

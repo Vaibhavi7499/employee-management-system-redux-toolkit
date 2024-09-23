@@ -5,8 +5,10 @@ import { v4 as uuidv4 } from "uuid";
 import { addEmp, updateEmp } from "../../Store/Slice/EmpSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const AddUpdateEmp = () => {
+  let {t} = useTranslation("common")
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let params = useParams();
@@ -31,13 +33,13 @@ const AddUpdateEmp = () => {
 
     if (params?.id) {
       dispatch(updateEmp(empObj));
-      toast.success("Employee updated successfully");
+      toast.success(t("Update message"));
       setTimeout(() => {
         navigate("/");
       }, 500);
     } else {
       dispatch(addEmp(empObj));
-      toast.success("Employee added successfully");
+      toast.success(t("Add message"));
       setTimeout(() => {
         navigate("/");
       }, 500);
@@ -46,12 +48,18 @@ const AddUpdateEmp = () => {
 
   return (
     <div className="col-md-6 m-auto mt-3 border p-5 pb-3">
+      {
+        params?.id ? <h2 className="text-center mb-2">
+        {t("Update Employee")}
+      </h2> : 
       <h2 className="text-center mb-2">
-        {params?.id ? "Update" : "Add"} Employee
-      </h2>
+        {t("Add Employee")}
+    </h2>
+      }
+      
       <form onSubmit={handleSubmit(getEmpData)}>
         <div className="mb-3">
-          <label className="form-label">Employee Name</label>
+          <label className="form-label">{t("Employee Name")}</label>
           <input
             type="text"
             className={
@@ -72,7 +80,7 @@ const AddUpdateEmp = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Employee Email</label>
+          <label className="form-label">{t("Employee Email")}</label>
           <input
             type="email"
             className={
@@ -97,7 +105,7 @@ const AddUpdateEmp = () => {
           </div>
         </div>
         <div className="mb-3">
-          <label className="form-label">Employee Phone Number</label>
+          <label className="form-label">{t("Employee Phone Number")}</label>
           <input
             type="number"
             className={
@@ -117,9 +125,15 @@ const AddUpdateEmp = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center">
+          {
+            params?.id ?
           <button type="submit" className="btn btn-primary ">
-            {params?.id ? "Update" : "Add"} Employee
+            {t("Add Employee")}
           </button>
+          :    <button type="submit" className="btn btn-primary ">
+          {t("Update Employee")}
+        </button>
+          }
         </div>
       </form>
     </div>
