@@ -126,12 +126,12 @@ const AddUpdateEmp = () => {
         </div>
         <div className="d-flex justify-content-center">
           {
-            params?.id ?
+            params.id ?
           <button type="submit" className="btn btn-primary ">
-            {t("Add Employee")}
+            {t("Update Employee")}
           </button>
           :    <button type="submit" className="btn btn-primary ">
-          {t("Update Employee")}
+          {t("Add Employee")}
         </button>
           }
         </div>
